@@ -1,5 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="number_of_players">
+        <item>-</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="card_faces">
+        <item>--</item>
+        <item>7♥</item>
+        <item>8♥</item>
+        <item>9♥</item>
+        <item>T♥</item>
+        <item>J♥</item>
+        <item>Q♥</item>
+        <item>K♥</item>
+        <item>7♣</item>
+        <item>8♣</item>
+        <item>9♣</item>
+        <item>T♣</item>
+        <item>J♣</item>
+        <item>Q♣</item>
+        <item>K♣</item>
+        <item>7♦</item>
+        <item>8♦</item>
+        <item>9♦</item>
+        <item>T♦</item>
+        <item>J♦</item>
+        <item>Q♦</item>
+        <item>K♦</item>
+        <item>7♠</item>
+        <item>8♠</item>
+        <item>9♠</item>
+        <item>T♠</item>
+        <item>J♠</item>
+        <item>Q♠</item>
+        <item>K♠</item>
+    </string-array>
+
+    <string name="ebinqo_url">http://ebinqo.com/</string>
     <string name="app_name">Svarka Odds Calculator</string>
+    <string name="title_activity_calculator">Svarka Odds Calculator</string>
+    <string name="calculate_label">Calculate</string>
+    <string name="win_label">"  Win[%]:"</string>
+    <string name="svarka_label">"  Svarka[%]:"</string>
+    <string name="lose_label">"  Lose[%]:"</string>
+    <string name="card_1_warning">"First card is not selected!"</string>
+    <string name="card_2_warning">"Second card is not selected!"</string>
+    <string name="card_3_warning">"Third card is not selected!"</string>
+    <string name="number_of_players_warning">"Number of players is not selected!"</string>
 
 </resources>
