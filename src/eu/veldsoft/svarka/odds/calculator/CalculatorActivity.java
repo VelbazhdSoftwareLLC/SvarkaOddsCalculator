@@ -3,6 +3,7 @@ package eu.veldsoft.svarka.odds.calculator;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,9 +12,32 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CalculatorActivity extends Activity {
+
+	private AsyncTask<String, Integer, Long> task = new AsyncTask<String, Integer, Long>() {
+		@Override
+		protected Long doInBackground(String... hands) {
+			runOnUiThread(new Runnable(){
+			      @Override
+			      public void run() {
+						progressUpdate(Math.random(), Math.random(), Math.random());
+			      }});
+			
+			return 0L;
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... progress) {
+		}
+
+		@Override
+		protected void onPostExecute(Long result) {
+		}
+	};
+
 	private Spinner spinner1 = null;
 
 	private Spinner spinner2 = null;
@@ -21,6 +45,18 @@ public class CalculatorActivity extends Activity {
 	private Spinner spinner3 = null;
 
 	private Spinner spinner4 = null;
+
+	private TextView text1 = null;
+
+	private TextView text2 = null;
+
+	private TextView text3 = null;
+
+	private void progressUpdate(Double... result) {
+		text1.setText( "" + (int)(result[0]*100.0) );
+		text2.setText( "" + (int)(result[1]*100.0) );
+		text3.setText( "" + (int)(result[2]*100.0) );
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +67,10 @@ public class CalculatorActivity extends Activity {
 		spinner2 = ((Spinner) findViewById(R.id.spinner2));
 		spinner3 = ((Spinner) findViewById(R.id.spinner3));
 		spinner4 = ((Spinner) findViewById(R.id.spinner4));
+		
+		text1 = ((TextView) findViewById(R.id.textView1));
+		text2 = ((TextView) findViewById(R.id.textView2));
+		text3 = ((TextView) findViewById(R.id.textView3));
 
 		spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
@@ -115,6 +155,8 @@ public class CalculatorActivity extends Activity {
 									Toast.LENGTH_SHORT).show();
 							return;
 						}
+
+						task.execute("", "", "", "");
 					}
 				});
 
