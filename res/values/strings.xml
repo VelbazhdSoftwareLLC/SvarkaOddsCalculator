@@ -21,6 +21,7 @@
         <item>J♥</item>
         <item>Q♥</item>
         <item>K♥</item>
+        <item>A♥</item>
         <item>7♣</item>
         <item>8♣</item>
         <item>9♣</item>
@@ -28,6 +29,7 @@
         <item>J♣</item>
         <item>Q♣</item>
         <item>K♣</item>
+        <item>A♣</item>
         <item>7♦</item>
         <item>8♦</item>
         <item>9♦</item>
@@ -35,6 +37,7 @@
         <item>J♦</item>
         <item>Q♦</item>
         <item>K♦</item>
+        <item>A♦</item>
         <item>7♠</item>
         <item>8♠</item>
         <item>9♠</item>
@@ -42,6 +45,7 @@
         <item>J♠</item>
         <item>Q♠</item>
         <item>K♠</item>
+        <item>A♠</item>
     </string-array>
 
     <string name="ebinqo_url">http://ebinqo.com/</string>
