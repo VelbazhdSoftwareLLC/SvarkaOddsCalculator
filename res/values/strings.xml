@@ -51,13 +51,19 @@
     <string name="ebinqo_url">http://ebinqo.com/</string>
     <string name="app_name">Svarka Odds Calculator</string>
     <string name="title_activity_calculator">Svarka Odds Calculator</string>
+    <string name="help_option">Help</string>
+    <string name="about_option">About</string>
     <string name="calculate_label">Calculate</string>
-    <string name="win_label">"  Win[%]:"</string>
-    <string name="svarka_label">"  Svarka[%]:"</string>
-    <string name="lose_label">"  Lose[%]:"</string>
+    <string name="win_label">"  Win:"</string>
+    <string name="svarka_label">"  Svarka:"</string>
+    <string name="lose_label">"  Lose:"</string>
     <string name="card_1_warning">"First card is not selected!"</string>
     <string name="card_2_warning">"Second card is not selected!"</string>
     <string name="card_3_warning">"Third card is not selected!"</string>
     <string name="number_of_players_warning">"Number of players is not selected!"</string>
+    <string name="title_activity_about">About</string>
+    <string name="about_text">Svarka Odds Calculator is Monte-Carlo simulation based calculator for the popular Bulgarian gambling game called Svarka. \n\nSvarka Odds Calculator is published by Velbazhd Software LLC.\n\nNewer versions can be checked at: http://github.com/TodorBalabanov/SvarkaOddsCalculator</string>
+    <string name="title_activity_help">Help</string>
+    <string name="help_text">In order to calculate your chances first select the number of players in the game and after that point the cards in your hand. The Calculate button will start the Monte-Carlo simulation. After certain amount of time you will get calculated chances for win, lose or tie.</string>
 
 </resources>

@@ -2,12 +2,19 @@ package eu.veldsoft.svarka.odds.calculator;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -21,44 +28,22 @@ import android.widget.Toast;
 public class CalculatorActivity extends Activity {
 	private static long MIN_TIME_FOR_CALCULATION = 1000;
 
+	private static long TIME_BETWEEN_RUNS = MIN_TIME_FOR_CALCULATION + 100;
+
 	private Map<String, Integer> stringToNumber = new HashMap<String, Integer>();
 
 	private Simulation simulation = null;
 
 	private double result[] = { 0.0, 0.0, 0.0 };
 
-	private Thread task = new Thread(new Runnable() {
+	private Timer timer = new Timer();
+
+	private TimerTask task = new TimerTask() {
 		@Override
 		public void run() {
-
-			while (true) {
-				if (simulation == null) {
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-					}
-					continue;
-				}
-
-				long time = System.currentTimeMillis();
-				while (System.currentTimeMillis() - time < MIN_TIME_FOR_CALCULATION) {
-					result = simulation.round();
-				}
-
-				runOnUiThread(new Runnable() {
-					public void run() {
-						progressUpdate();
-					}
-				});
-
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-				}
-				time = System.currentTimeMillis();
-			}
+			doCalculation();
 		}
-	});
+	};
 
 	private Spinner spinner1 = null;
 
@@ -73,6 +58,26 @@ public class CalculatorActivity extends Activity {
 	private TextView text2 = null;
 
 	private TextView text3 = null;
+
+	private void doCalculation() {
+		if (simulation == null) {
+			return;
+		}
+
+		long time = System.currentTimeMillis();
+		while (System.currentTimeMillis() - time < MIN_TIME_FOR_CALCULATION) {
+			simulation.round();
+
+			SystemClock.sleep(1);
+		}
+		result = simulation.result();
+
+		runOnUiThread(new Runnable() {
+			public void run() {
+				progressUpdate();
+			}
+		});
+	}
 
 	private void progressUpdate() {
 		text1.setText("" + (int) (result[0] * 10000.0 + 0.5) / 100.0);
@@ -248,6 +253,13 @@ public class CalculatorActivity extends Activity {
 								stringToNumber.get(spinner1.getSelectedItem()),
 								stringToNumber.get(spinner2.getSelectedItem()),
 								stringToNumber.get(spinner3.getSelectedItem()));
+
+						try {
+							timer.scheduleAtFixedRate(task, 10,
+									TIME_BETWEEN_RUNS);
+						} catch (Exception exception) {
+
+						}
 					}
 				});
 
@@ -260,12 +272,42 @@ public class CalculatorActivity extends Activity {
 										.getString(R.string.ebinqo_url))));
 					}
 				});
-
-		task.start();
 	}
 
 	@Override
 	protected void onDestroy() {
-		task.interrupt();
+		super.onDestroy();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.calculator_option_menu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.help_game:
+			CalculatorActivity.this.startActivity(new Intent(
+					CalculatorActivity.this, HelpActivity.class));
+			break;
+		case R.id.about_game:
+			CalculatorActivity.this.startActivity(new Intent(
+					CalculatorActivity.this, AboutActivity.class));
+			break;
+		}
+		return true;
 	}
 }

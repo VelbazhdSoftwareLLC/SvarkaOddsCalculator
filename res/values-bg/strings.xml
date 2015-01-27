@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="help_option">Помощ</string>
+    <string name="about_option">За продукта</string>
+    <string name="calculate_label">Пресметни</string>
+    <string name="win_label">"  Печалба:"</string>
+    <string name="svarka_label">"  Сварка:"</string>
+    <string name="lose_label">"  Загуба:"</string>
+    <string name="card_1_warning">"Не е избрана първа карта!"</string>
+    <string name="card_2_warning">"Не е избрана втора карта!"</string>
+    <string name="card_3_warning">"Не е избрана трета карта!"</string>
+    <string name="number_of_players_warning">"Не е определен броя на играчите!"</string>
+    <string name="title_activity_about">За продукта</string>
+    <string name="about_text">Svarka Odds Calculator е калкулатор на шансовете за печалба, загуба и Сварка, базиран на Монте-Карло симулация. \n\nSvarka Odds Calculator е продукт публикуван от фирмата Велбъжд Софтуер ЕООД. \n\nЗа нови версии на продукта моля посетете: http://github.com/TodorBalabanov/SvarkaOddsCalculator</string>
+    <string name="title_activity_help">Помощ</string>
+    <string name="help_text">За да пресметенете шансвоете за печалба, загуба и Сварка, изберете броя играчи и картите от вашата ръка. След натискането на бутона Пресметни започва Монте-Карло симулация и до няколко секунди се визуализират приближените резултати за печалба, загуба или Сварка, в проценти.</string>
+
+</resources>

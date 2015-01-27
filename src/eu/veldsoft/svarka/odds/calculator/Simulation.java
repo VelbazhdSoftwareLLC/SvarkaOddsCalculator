@@ -340,7 +340,7 @@ class Simulation {
 		score = calculateScore(0);
 	}
 
-	public double[] round() {
+	public void round() {
 		outcome = Outcome.WIN;
 
 		for (int p = 1; p < numberOfPlayers; p++) {
@@ -371,12 +371,14 @@ class Simulation {
 		partialShuffle();
 		partialSort();
 		count++;
-
+	}
+	
+	public double[] result() {
 		double result[] = { (double) win / (double) count,
 				(double) svarka / (double) count,
 				(double) lose / (double) count };
 		return result;
-	}
+	}	
 
 	@Override
 	public String toString() {
