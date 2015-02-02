@@ -263,7 +263,17 @@ public class CalculatorActivity extends Activity {
 					}
 				});
 
-		((ImageView) findViewById(R.id.ebinqoLogo))
+		((ImageView) findViewById(R.id.radio24x7rock))
+				.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						CalculatorActivity.this.startActivity(new Intent(
+								Intent.ACTION_VIEW, Uri.parse(getResources()
+										.getString(R.string.radio24x7rock_url))));
+					}
+				});
+
+		((ImageView) findViewById(R.id.ebinqo))
 				.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View view) {

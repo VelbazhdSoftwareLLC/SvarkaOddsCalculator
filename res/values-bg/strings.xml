@@ -47,6 +47,7 @@
         <item>A♠</item>
     </string-array>
 
+    <string name="radio24x7rock_url">http://radio24x7rock.eu/</string>
     <string name="ebinqo_url">http://ebinqo.com/</string>
     <string name="app_name">Svarka Odds Calculator</string>
     <string name="title_activity_calculator">Svarka Odds Calculator</string>

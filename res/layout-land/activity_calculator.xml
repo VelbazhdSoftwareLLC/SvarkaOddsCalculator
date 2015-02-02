@@ -89,20 +89,23 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/ebinqo"
-        android:layout_width="fill_parent"
+        android:id="@+id/radio24x7rock"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/radio24x7rock" />
+    
+    <ImageView
+        android:id="@+id/ebinqo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/linearLayout1"
         android:layout_marginBottom="0dp"
         android:src="@drawable/ebingo" />
-
-    <ImageView
-        android:id="@+id/radio24x7rock"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/ebinqo"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/radio24x7rock" />
 
 </RelativeLayout>
