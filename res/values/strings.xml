@@ -66,5 +66,7 @@
     <string name="about_text">Svarka Odds Calculator is Monte-Carlo simulation based calculator for the popular Bulgarian gambling game called Svarka. \n\nSvarka Odds Calculator is published by Velbazhd Software LLC.\n\nNewer versions can be checked at: http://github.com/TodorBalabanov/SvarkaOddsCalculator</string>
     <string name="title_activity_help">Help</string>
     <string name="help_text">In order to calculate your chances first select the number of players in the game and after that point the cards in your hand. The Calculate button will start the Monte-Carlo simulation. After certain amount of time you will get calculated chances for win, lose or tie.</string>
+    <string name="title_activity_splash">Svarka Odds Calculator</string>
+    <string name="redirect_activity_is_missing_message">Redirect activity is missing!</string>
 
 </resources>
